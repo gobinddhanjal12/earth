@@ -1,0 +1,78 @@
+.earth {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  overflow: visible;
+  cursor: default;
+}
+
+.earth[data-interactive="true"] {
+  cursor: grab;
+  touch-action: none;
+}
+
+.earth[data-interactive="true"]:active {
+  cursor: grabbing;
+}
+
+.earth canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  justify-content: center;
+  color: rgb(183 205 233 / 72%);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 1px solid rgb(126 174 225 / 24%);
+  border-top-color: rgb(126 190 255 / 90%);
+  border-radius: 999px;
+  animation: spin 0.9s linear infinite;
+}
+
+.error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: rgb(255 255 255 / 68%);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (max-width: 767px) {
+  .earth {
+    min-height: 360px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}

@@ -1,0 +1,47 @@
+.page {
+  display: grid;
+  min-height: 100svh;
+  place-content: center;
+  padding: 2rem;
+  background:
+    radial-gradient(circle, rgb(33 101 164 / 24%), transparent 32rem),
+    var(--background);
+  text-align: center;
+}
+
+.page p {
+  margin: 0;
+  color: #8edbff;
+  font-family: var(--font-geist-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page h1 {
+  max-width: 42rem;
+  margin: 1rem 0 2rem;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 450;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.page a,
+.page button {
+  justify-self: center;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid rgb(142 219 255 / 42%);
+  border-radius: 999px;
+  color: var(--foreground);
+  background: rgb(142 219 255 / 8%);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.page a:focus-visible,
+.page button:focus-visible {
+  outline: 2px solid #8edbff;
+  outline-offset: 4px;
+}
