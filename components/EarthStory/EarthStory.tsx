@@ -21,7 +21,7 @@ const atmosphereLayers = [
     range: "0—12 km",
     text: "Weather and the air we breathe.",
     side: "left" as const,
-    angle: 158,
+    angle: 110,
   },
   {
     ...ATMOSPHERE_SHELLS.stratosphere,
@@ -29,7 +29,7 @@ const atmosphereLayers = [
     range: "12—50 km",
     text: "Ozone layer. Blocks UV.",
     side: "right" as const,
-    angle: 22,
+    angle: 28,
   },
   {
     ...ATMOSPHERE_SHELLS.mesosphere,
@@ -45,7 +45,7 @@ const atmosphereLayers = [
     range: "85—600 km",
     text: "Auroras. ISS orbit.",
     side: "right" as const,
-    angle: -18,
+    angle: -38,
   },
   {
     ...ATMOSPHERE_SHELLS.exosphere,
