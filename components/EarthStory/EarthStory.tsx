@@ -11,8 +11,8 @@ import RealisticEarth, {
 import type { EarthVisualState } from "@/components/RealisticEarth";
 import styles from "./EarthStory.module.css";
 
-const SCROLL_SPEED_MULTIPLIER = 0.25;
-const TOUCH_MOMENTUM_SECONDS = 0.25;
+const SCROLL_SPEED_MULTIPLIER = 0.75;
+const TOUCH_MOMENTUM_SECONDS = 0.75;
 
 const atmosphereLayers = [
   {
