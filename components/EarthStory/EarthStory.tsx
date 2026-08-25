@@ -11,6 +11,9 @@ import RealisticEarth, {
 import type { EarthVisualState } from "@/components/RealisticEarth";
 import styles from "./EarthStory.module.css";
 
+const SCROLL_SPEED_MULTIPLIER = 0.25;
+const TOUCH_MOMENTUM_SECONDS = 0.25;
+
 const atmosphereLayers = [
   {
     ...ATMOSPHERE_SHELLS.troposphere,
@@ -92,6 +95,13 @@ export default function EarthStory() {
         gsap.set(`.${styles.progressLine}`, { display: "none" });
         return;
       }
+
+      const scrollNormalizer = ScrollTrigger.normalizeScroll({
+        allowNestedScroll: true,
+        momentum: TOUCH_MOMENTUM_SECONDS,
+        type: "wheel,touch",
+        wheelSpeed: SCROLL_SPEED_MULTIPLIER,
+      });
 
       ScrollTrigger.create({
         trigger: story,
@@ -396,6 +406,7 @@ export default function EarthStory() {
         contextDisposed = true;
         window.clearTimeout(resizeTimerId);
         window.removeEventListener("resize", rebuildResponsiveTimeline);
+        scrollNormalizer?.kill();
         responsiveAnimationContext.revert();
       };
     }, story);
