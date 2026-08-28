@@ -37,6 +37,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
+      <head>
+        <meta name="google-site-verification" content={process.env.GOOGLE_SITE_VERIFICATION} />
+      </head>
       <body>{children}</body>
     </html>
   );
