@@ -60,7 +60,7 @@ export const ATMOSPHERE_SHELLS = {
 } as const;
 const QUALITY_PROFILES: Record<ResolvedEarthQuality, QualityProfile> = {
   low: {
-    antialias: false,
+    antialias: true,
     detailSegments: 40,
     maxAnisotropy: 4,
     maxPixelRatio: 1.2,
